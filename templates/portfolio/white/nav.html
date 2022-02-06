@@ -1,0 +1,176 @@
+{%  extends 'portfolio/white/footer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>José Aguiar</title>
+</head>
+<body class="body" style="background-color: #ececec; filter: invert();">
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: transparent;">
+    <div class="container-fluid">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="{% url 'wHome'%}">
+                <img src="{% static 'unknown.png' %}" alt="logo" width="50" height="50" class="d-inline-block align-text-top">
+                <h1 class="d-inline-block align-text-top" style="padding-left:20px;">José Pedro Aguiar</h1></a>
+            </a>
+        </div>
+
+        <button class="navbar-toggler ms-auto mb-1 mb-lg-0 pt-0"   style="position: absolute;left:86%;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon d-inline-block align-text-top" style="padding-top:-100px;padding-bottom:-50px;" ></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 " >
+
+                    <li class="nav-item ml-1 ">
+                        <span class="w3-hide-small w3-hide-medium"> <i class="bi bi-sun" style="color: #00aeff;"></i>  </span>
+                    </li>
+
+                    <li class="nav-item ml-1 " style=" display: inline-block;padding-left:10px;padding-right:10px;">
+                        <span class="w3-hide-large"><br> <p style="color:#8f8f8f;margin-bottom: 2px">Darkmode</p></span>
+                        <div class="value" id="onOffSwitch">
+                            <div class="onoffswitch">
+                                <label class="switch">
+                                    <input id="button_switch" type="checkbox">
+                                    <div class="slider round"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item ml-1 "style="padding-right:20px;">
+                    <span class="w3-hide-small w3-hide-medium">  <i class="fa fa-moon-o" style="color: #00aeff;"></i> </span>
+                    </li>
+
+
+
+                <li class="nav-item ml-1 " style="padding-left:10px;padding-right:20px;">
+                    <a class="nav-link" href="{% url 'blog:all_blogs_w'%}">Blog</a>
+                </li>
+                <br>
+                <li class="nav-item ml-1 " style="padding-left:10px;padding-right:20px;">
+                    <form action="{% url 'cv:wCv'%}">
+                    <button type="submit" class="w3-btn w3-round w3-text-black w3-ripple " style="width:100px;background-color: #00aeff;">CV</button>
+                    </form>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+{% block body %} {% endblock %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 28px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {display:none;}
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: black;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #00aeff ;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #00aeff ;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(52px);
+        -ms-transform: translateX(52px);
+        transform: translateX(52px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 28px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    img{
+        z-index: 11;
+    }
+    i:hover{
+        color: #00aeff ;
+    }
+
+    img{
+        z-index: 11;
+        filter: invert();
+    }
+    i:hover{
+        color: #00aeff ;
+    }
+</style>
+</html>
+<script>
+
+    (function(){ //wait for load event
+        var form = document.getElementById('formtoedit');
+        var button = document.getElementById('button_switch');
+
+        button.addEventListener('click',function(){
+            if(this.checked){
+                window.location.href = "{% url 'home' %}";
+            }else{
+                window.location.href = "{% url 'wHome' %}";
+            }
+        });
+
+    })();
+</script>
+
+</html>
+
+{% endblock %}

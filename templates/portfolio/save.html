@@ -1,0 +1,52 @@
+ {%  extends 'portfolio/nav.html' %}
+{% block body %}
+
+{% load static %}
+    <div class="w3-padding-large">
+    <!-- Header/Home -->
+        <div class="  w3-display-container w3-animate-opacity" style="display: inline-block ;background: rgb(255,81,0);
+background:  background: rgb(255,81,0);
+background: linear-gradient(120deg, rgba(255,81,0,1) 6%, rgba(193,61,0,1) 35%, rgba(173,55,0,1) 63%, rgba(134,43,0,1) 82%, rgba(42,42,42,1) 100%);  ; width:100%">
+
+            <img src="{% static 'img_1.png' %}" alt="boy" style=" left:100%;min-height:350px;max-height:600px; display: inline-block;background-image:linear-gradient(120deg,#1A1C22, white);">
+            <h1 class="w3-jumbo w3-text-light-grey"  style="display: inline-block;"><span class="w3-hide-small">I'm</span> José Aguiar.</h1>
+            <p style="display: inline-block;background-color:white;"><br> Informatics Engineering.</p>
+        </div>
+
+        </div>
+
+        <header class="w3-container w3-padding-32 w3-center">
+        <h1 class="w3-jumbo w3-text-light-grey"><span class="w3-hide-small">I'm</span> José Aguiar.</h1>
+        <p style="color: #ff5100;"> Informatics Engineering.</p>
+        <img src="{% static 'img_1.png' %}" alt="boy" class="w3-image" width="350" height="600" style="display: inline-block;background-image:linear-gradient(120deg,#1A1C22, white);">
+    </header>
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    </div>
+    <div class="card-group">
+    {%for project in projects %}
+        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+        <div class="card-body">
+    {%if project.url %}
+        <a href="{{project.url}}">
+    {%else %}
+        <a>
+    {%endif %}
+        <div>
+            <img src="{{project.image.url}}" class="card-img-top" alt="..."><img>
+    <h5 class="card-title">{{project.title}}</h5>
+        <p class="card-text">{{project.description}}</p>
+
+        </div></a>
+    </div></div>
+
+    {%endfor  %}
+    </div>
+    </div>
+{% endblock %}

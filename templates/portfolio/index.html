@@ -1,0 +1,94 @@
+ {%  extends 'portfolio/nav.html' %}
+{% block body %}
+
+{% load static %}
+    <span class="w3-hide-small w3-hide-medium m1 - m12">
+    <span class="w3-hide-medium">
+
+        <asside class="w3-text-white  w3-xxlarge w3-container w3-padding-24 w3-animate-opacity" style=" position: absolute; right:5%;top:27%;display: inline-grid;margin-right: 8%;z-index: 10;">
+    <a  class="w3-text-white" href="https://www.facebook.com/josepedro.aguiar.1" target="_blank" ><i class="fa fa-facebook-official  w3-xlarge" style="margin-bottom: 60% ;margin-top: 60%"></i></a>
+    <a  class="w3-text-white" href="https://www.instagram.com/josepedroaguiar/" target="_blank"><i class="fa fa-instagram  w3-xlarge" style="margin-bottom: 60% ;margin-top: 60%"></i></a>
+    <a  class="w3-text-white" href="https://twitter.com/JosPedroAguiar?t=fSceoPeup8lokThrsRzRcQ&s=09" target="_blank"><i class="fa fa-twitter  w3-xlarge" style="margin-bottom: 60% ;margin-top: 60%"></i></a>
+    <a  class="w3-text-white" href="https://gitlab.com/jose_aguiar" target="_blank"> <i class="fa fa-gitlab w3-xlarge" style="margin-bottom: 60% ;margin-top: 60%"></i></a>
+    <a  class="w3-text-white" href="https://www.linkedin.com/in/jos%C3%A9-pedro-aguiar-219a7b225" target="_blank"><i class="fa fa-linkedin  w3-xlarge" style="margin-bottom: 60% ;margin-top: 60%"></i></a>
+
+
+    </asside>
+    <div class="w3-padding-large  w3-animate-left" id="main ">
+    <!-- Header/Home -->
+
+        <div class="  w3-display-container  w3-animate-opacity" style="display: inline-block;width:100%;padding-left: 20%;color: grey;">
+            <div style=" display:inline-grid;padding-right: 20%">
+            <h1 class="w3-jumbo" style="color: #ff5100;"><span class="w3-hide-small" style="color: white;" >I'm</span> José Aguiar.</h1>
+            <p style="display: inline-block;" style="color: white;"> Informatics Engineering.</p>
+
+                <form action="{% url 'cv:cv'%}">
+                 <button type="submit" class="w3-btn w3-round w3-text-white w3-ripple " style="width:100px;background-color: #ff5100;"><b>My CV</b></button>
+                </form>
+            <br>
+            </div>
+
+
+
+            <img class="w3-image" src="{% static 'img_2.png' %}" alt="boy" style=" position: sticky;height:620px;display: inline-block;background-image:linear-gradient(120deg,#1A1C22, white);">
+
+        </div>
+   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about" style="padding-right:20px;padding-left:20px;">
+    <h2 class="w3-text-light-grey" style="padding-left:20px ;padding-right:20px">About Me</h2>
+    <hr style="padding-left:20px ;padding-right:20px;width:200px;" class="w3-opacity">
+    <p style="padding-right:20px;padding-left:20px ;">Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    </div>
+        </div>
+
+    </span>
+    </span>
+    <span class="w3-hide-large w3-animate-left" >
+        <header class="w3-container w3-padding-32 w3-center" id="home"style="color: grey;">
+        <h1 class="w3-jumbo" style="color: #ff5100;"><span class="w3-hide-small" style="color: white;" >I'm</span> José Aguiar.</h1>
+        <p> Informatics Engineering.</p>
+        <form action="{% url 'cv:cv'%}">
+        <button type="submit" class="w3-btn w3-round w3-text-white w3-ripple " style="width:100px;background-color: #ff5100;"><b>My CV</b></button>
+
+        </form>
+            <br>
+        <img src="{% static 'img_2.png' %}" alt="boy" class="w3-image" width="350" height="600" style="display: inline-block;">
+
+    </header>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey" style="padding-left:20px ;padding-right:20px">My Name</h2>
+    <hr style="padding-left:20px ;padding-right:20px;width:200px;" class="w3-opacity">
+    <p style="padding-right:20px;padding-left:20px ;">Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    </div>
+    </span>
+    <!-- About Section -->
+
+    <div class="card-group "style="padding-left: 10%;padding-right: 10%;">
+    {%for project in projects %}
+        <div class="card" style="background: transparent;">
+        <div class="card-body text-white mb-3"  style=" background-color: transparent;">
+    {%if project.url %}
+        <a class="w3-text-white" href="{{project.url}}" style="text-decoration:none;">
+    {%else %}
+        <a>
+    {%endif %}
+        <div>
+            <img src="{{project.image.url}}" class="card-img-top" alt="..." style=" max-height:200px ;max-width:333px"><img>
+    <h3 class="card-title" style=" max-height:200px ;max-width:333px">{{project.title}}</h3>
+        <p class="card-text" style=" max-height:200px ;max-width:333px">{{project.description}}</p>
+
+        </div></a>
+    </div></div>
+
+    {%endfor  %}
+    </div>
+    </div>
+
+{% endblock %}
+
+

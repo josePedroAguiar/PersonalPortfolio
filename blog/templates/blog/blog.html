@@ -1,0 +1,9 @@
+{%  extends 'portfolio/nav.html' %}
+{% block body %}
+<div class="w3-text-white w3-container w3-animate-opacity">
+<h2 class=" w3-center" style="color: #ff5100">{{ blog.title }}</h2>
+<h6  class="w3-text-grey w3-center">{{blog.date|date:'j F Y'}}</h6>
+<p>{{blog.description|safe}}</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
