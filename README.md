@@ -18,11 +18,11 @@ In addition, the portfolio has a small and simple Database (DB) to facilitate co
 
 The elements (in this case objects :D ) that can be configured by the DB:
 
--Skill(skills),
--Work Experience,
--Education,
--Project,
--Blog 
+- Skill(skills),
+- Work Experience,
+- Education,
+- Project,
+- Blog 
 
 ## PT
 
