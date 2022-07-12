@@ -69,9 +69,9 @@
                     <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right " style="color: #ff5100;"></i>Languages</b></p>
                     {% for language in languages %}
                         <p>{{language.name}}</p>
-                        <div class="w3-black w3-round-xlarge w3-small">
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge" style="width:{{language.perc}};background-color:#ff5100;">
-                                <div class="w3-center w3-text-black">{{language.perc}}</div>
+                                <div class="w3-center w3-text-light-grey">{{language.perc}}</div>
                             </div>
                         </div>
                     {% endfor %}
@@ -124,9 +124,9 @@
                     {% for skill in skills %}
 
                         <h5>{{skill.name}}</h5>
-                        <div class="w3-black w3-round-xxlarge w3-medium">
+                        <div class="w3-light-grey w3-round-xxlarge w3-medium">
                             <div class="w3-container w3-center w3-round-xxlarge" style="width:{{skill.perc}};background-color:#ff5100;">
-                                <div class="w3-center w3-text-black">{{skill.perc}}</div>
+                                <div class="w3-center w3-text-light-grey">{{skill.perc}}</div>
                             </div>
                         </div>
                         <br>
