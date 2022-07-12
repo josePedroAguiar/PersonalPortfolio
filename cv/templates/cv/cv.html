@@ -48,7 +48,7 @@
                 </div>
                 <br>
                 <div class="w3-container">
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large " style="color: #ff5100;"></i>{{ data.work }}</p>
+                    <!--- <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large " style="color: #ff5100;"></i>{{ data.work }}</p>--->
                     <p><i class="fa fa-home fa-fw w3-margin-right w3-large " style="color: #ff5100;"></i>{{ data.local }}</p>
                     <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large " style="color: #ff5100;"></i>{{ data.email }}</p>
                     <p><i class="fa fa-phone fa-fw w3-margin-right w3-large " style="color: #ff5100;"></i>{{ data.phone }}</p>
@@ -56,22 +56,22 @@
                     <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right " style="color: #ff5100;"></i>Skills</b></p>
                     {% for skill in skills %}
 
-                        <div>
-                            <p>{{skill.name}}</p>
-                            <div class="w3-light-white w3-round-xlarge w3-small">
-                                <div class="w3-container w3-center w3-round-xlarge " style="width:{{skill.perc}};color: #ff5100;">{{skill.perc}}</div>
+                        <p>{{skill.name}}</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge" style="width:{{skill.perc}};background-color: #ff5100;">
+                                <div class="w3-center w3-text-white">{{skill.perc}}</div>
                             </div>
-                        </div>
+                        </div>  <br>
                     {% endfor %}
 
                     <br>
 
                     <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right " style="color: #ff5100;"></i>Languages</b></p>
                     {% for language in languages %}
-                        <div>
-                            <p>{{language.name}}</p>
-                            <div class="w3-light-white w3-round-xlarge w3-small">
-                                <div class="w3-container w3-center w3-round-xlarge " style="height:24px;width:{{language.perc}}">{{language.perc}}</div>
+                        <p>{{language.name}}</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge" style="width:{{language.perc}};background-color:#ff5100;">
+                                <div class="w3-center w3-text-white">{{language.perc}}</div>
                             </div>
                         </div>
                     {% endfor %}
@@ -92,7 +92,7 @@
 
                     <div>
                         <h5 class="w3-opacity"><b>{{work.title}}</b></h5>
-                        <h6 class="" style="color: #ff5100;"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{work.dateS|date:'F Y'}} <span class="w3-tag  w3-round" style="color: #ff5100;">{work.dateE|date:'F Y'}}</span></h6>
+                        <h6 class="" style="color: #ff5100;"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{work.dateS|date:'F Y'}} <span class="w3-tag  w3-round" style="color: #ff5100;">{{work.dateE|date:'F Y'}}</span></h6>
                         <p>{{ work.description|striptags}}</p>
                         <hr>
                     </div>
@@ -107,13 +107,27 @@
 
                     <div>
                         <h5 class="w3-opacity"><b>{{education.title}}</b></h5>
-                        <h6 class=""><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{education.dateS|date:'F Y'}} <span class="w3-tag  w3-round" style="color: #ff5100;">{education.dateE|date:'F Y'}}</span></h6>
+                        <h6 class=""><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{education.dateS|date:'F Y'}} <span class="w3-tag  w3-round" style="color: #ff5100;">{{education.dateE|date:'F Y'}}</span></h6>
                         <p>{{ education.description|striptags}}</p>
                         <hr>
                     </div>
                 {% endfor %}
                 <br>
             </div>
+            {% if skills %}
+                <div class="w3-container w3-card w3-text-white" style="background-color: #1A1C22">
+                    <h2  class="w3-text-white w3-padding-16"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-xxlarge " style="color: #ff5100;"></i>Skills</b></h2>
+                    {% for skill in skills %}
+
+                        <h5>{{skill.name}}</h5>
+                        <div class="w3-black w3-round-xxlarge w3-medium">
+                            <div class="w3-container w3-center w3-round-xxlarge" style="width:{{skill.perc}};background-color:#ff5100;">
+                                <div class="w3-center w3-text-white">{{skill.perc}}</div>
+                            </div>
+                        </div><br>
+                    {% endfor %}
+                </div>
+            {% endif%}
 
             <!-- End Right Column -->
         </div>
