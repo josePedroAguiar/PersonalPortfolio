@@ -16,7 +16,7 @@ The project presents 3 application folders that each correspond to the 3 differe
 
 In addition, the portfolio has a small and simple Database (DB) to facilitate configuration (change/add/remove) future elements.
 
-The elements that can be configured by the DB:
+The elements that can be configured by the DB are:
 
 - Skill(skills),
 - Work Experience,
@@ -43,7 +43,7 @@ Foi feito com Django ,que é uma framework de desenvolvimento web de **Python**,
 
 Além disso o portofolio tem uma pequena Base de Dados (BD) para facilitar configuração (alterar/adicionar/remover) elementos/dados futuros.
 
-Os elementos(neste caso objetos :D ) que podem ser configurados pela BD:
+Os elementos(neste caso objetos :D ) que podem ser configurados pela BD são:
 - ***Skill***(aptidões),
 - ***Work Experience***(experencia de trabalho),
 - ***Education***(educação),
