@@ -11,7 +11,7 @@ The project presents 3 application folders that each correspond to the 3 differe
 - **CV**-Curriculum Vitae- Curriculum with data about mine:
   - Skills,
   - Work Experience,
-  - Education(education);
+  - Education;
 - **Blog Pages**- Pages with some texts of "things" that I think is relevant to talk about
 
 In addition, the portfolio has a small and simple Database (DB) to facilitate configuration (change/add/remove) future elements.
